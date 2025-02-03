@@ -1,5 +1,5 @@
 .robot-container {
-  margin: 20vh auto;
+  margin: 30vh auto;
   position: relative;
 }
 
@@ -23,11 +23,19 @@
   position: relative;
 }
 
+.robot-face-shape ~ div {
+  position: absolute;
+}
+
 .robot-eye-left,
 .robot-eye-right {
   width: 39%;
   height: 19%;
   background-color: red;
+  background-image: url("https://picsum.photos/200/300.webp");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .robot-eye-left {
@@ -42,14 +50,48 @@
   left: 56%;
 }
 
-.robot-nose {
-  --border-width: 5em;
+.robot-nose,
+.robot-ear-left,
+.robot-ear-right {
   width: 0px;
   height: 0px;
-  border-top: var(--border-width) solid black;
-  border-left: calc(var(--border-width) / 2) solid transparent;
-  border-right: calc(var(--border-width) / 2) solid transparent;
-  top: 15%;
+}
+
+.robot-nose {
+  position: relative;
+  width: 100px;
+  height: 90px;
+}
+
+.robot-nose:before,
+.robot-nose:after {
+  position: absolute;
+  content: "";
+  left: 50px;
+  top: 50px;
+  width: 50px;
+  height: 80px;
+  background: #000428; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #004e92,
+    #000428
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #004e92,
+    #000428
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  border-radius: 50px 50px 0 0;
+  transform: rotate(-45deg);
+  transform-origin: 0 100%;
+}
+
+.robot-nose:after {
+  left: 0;
+  transform: rotate(45deg);
+  transform-origin: 100% 100%;
 }
 
 .robot-mouth {
@@ -57,7 +99,7 @@
   width: 18em;
   height: 7em;
   border-radius: 0px 0% 50% 50% / 0px 0% 100% 100%;
-  top: 20%;
+  top: 10%;
   display: flex;
   gap: 2px;
   overflow: hidden;
@@ -72,41 +114,97 @@
 .robot-tooth {
   height: 100%;
   width: 100%;
-  background-color: red;
+  background-color: tomato;
 }
 
 .robot-ear-left,
 .robot-ear-right {
   --border-width: 180px;
-  width: 0px;
-  height: 0px;
-  position: absolute;
   top: 50%;
   transform: translateY(-50%);
+  opacity: 0.5;
 }
 
 .robot-ear-left {
-  border-right: solid var(--border-width) rgba(116, 255, 244, 0.6);
+  border-right: solid var(--border-width) rgb(116, 255, 244);
   border-top: solid calc(var(--border-width) / 2) transparent;
   border-bottom: solid calc(var(--border-width) / 2) transparent;
   right: 100%;
 }
 
 .robot-ear-right {
-  border-left: solid var(--border-width) rgba(116, 255, 244, 0.6);
+  border-left: solid var(--border-width) rgb(116, 255, 244);
   border-top: solid calc(var(--border-width) / 2) transparent;
   border-bottom: solid calc(var(--border-width) / 2) transparent;
   left: 100%;
 }
 
 .robot-hair-style {
+  width: 20rem;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -100%);
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+.robot-hair-style div {
+  width: 3rem;
+  height: 3rem;
+  background-color: red;
+  position: relative;
+}
+
+.robot-hair-style div:before {
+  --border-width: 3rem;
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-top: var(--border-width) solid #21222c;
+  border-right: calc(var(--border-width) / 2) solid transparent;
+  border-left: calc(var(--border-width) / 2) solid transparent;
 }
 
 .robot-hair-one {
+  background: #fceabb; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #f8b500,
+    #fceabb
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #f8b500,
+    #fceabb
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 .robot-hair-two {
+  background: #808080; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to left,
+    #3fada8,
+    #808080
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to left,
+    #3fada8,
+    #808080
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 .robot-hair-three {
+  background: #3a6186; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #89253e,
+    #3a6186
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #89253e,
+    #3a6186
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
