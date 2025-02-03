@@ -100,8 +100,6 @@
   height: 7em;
   border-radius: 0px 0% 50% 50% / 0px 0% 100% 100%;
   top: 10%;
-  display: flex;
-  gap: 2px;
   overflow: hidden;
 }
 
@@ -111,10 +109,60 @@
   transform: translateX(-50%);
 }
 
-.robot-tooth {
+.robot-mouth .robot-tooth {
+  position: absolute;
   height: 100%;
-  width: 100%;
+  width: 18px;
   background-color: tomato;
+  top: 0;
+}
+
+.robot-mouth .robot-tooth:nth-child(1) {
+  left: 0px;
+}
+
+.robot-mouth .robot-tooth:nth-child(2) {
+  left: 30px;
+}
+
+.robot-mouth .robot-tooth:nth-child(3) {
+  left: 60px;
+}
+
+.robot-mouth .robot-tooth:nth-child(4) {
+  left: 80px;
+}
+
+.robot-mouth .robot-tooth:nth-child(5) {
+  left: 100px;
+}
+
+.robot-mouth .robot-tooth:nth-child(6) {
+  left: 120px;
+}
+
+.robot-mouth .robot-tooth:nth-child(7) {
+  left: 140px;
+}
+
+.robot-mouth .robot-tooth:nth-child(8) {
+  left: 160px;
+}
+
+.robot-mouth .robot-tooth:nth-child(9) {
+  left: 180px;
+}
+
+.robot-mouth .robot-tooth:nth-child(10) {
+  left: 200px;
+}
+
+.robot-mouth .robot-tooth:nth-child(11) {
+  left: 230px;
+}
+
+.robot-mouth .robot-tooth:nth-child(12) {
+  left: 260px;
 }
 
 .robot-ear-left,
@@ -141,19 +189,16 @@
 
 .robot-hair-style {
   width: 20rem;
-  top: 0;
-  left: 50%;
-  transform: translate(-50%, -100%);
-  display: flex;
-  gap: 10px;
-  justify-content: center;
+  top: -8%;
+  left: 12%;
+  transform: translateY(-100%);
 }
 
 .robot-hair-style div {
   width: 3rem;
   height: 3rem;
   background-color: red;
-  position: relative;
+  position: absolute;
 }
 
 .robot-hair-style div:before {
@@ -165,6 +210,26 @@
   border-top: var(--border-width) solid #21222c;
   border-right: calc(var(--border-width) / 2) solid transparent;
   border-left: calc(var(--border-width) / 2) solid transparent;
+}
+
+.robot-hair-style div:nth-child(1) {
+  left: 60px;
+}
+
+.robot-hair-style div:nth-child(2) {
+  left: 120px;
+}
+
+.robot-hair-style div:nth-child(3) {
+  left: 180px;
+}
+
+.robot-hair-style div:nth-child(4) {
+  left: 240px;
+}
+
+.robot-hair-style div:nth-child(5) {
+  left: 300px;
 }
 
 .robot-hair-one {
