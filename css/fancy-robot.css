@@ -1,13 +1,43 @@
 .robot-container {
+  margin: 20vh auto;
 }
 
 .robot-face-shape {
+  width: 550px;
+  height: 550px;
+  background: rgb(133, 181, 177);
+  background: radial-gradient(
+    circle,
+    rgba(133, 181, 177, 1) 0%,
+    rgba(128, 176, 171, 1) 35%,
+    rgba(96, 133, 129, 1) 58%,
+    rgba(116, 255, 244, 1) 88%
+  );
+  border-radius: 30%;
+  border: 10px solid black;
+  box-shadow: rgba(255, 255, 255, 0.2) 0px 0px 30px 10px;
+}
+
+/*border-radius: 0px 100% 83px 0px / 0px 100% 62px 0px; */
+
+.robot-eye-left,
+.robot-eye-right {
+  width: 39%;
+  height: 19%;
+  background-color: red;
+  position: relative;
 }
 
 .robot-eye-left {
+  border-radius: 0px 100% 83px 0px / 0px 100% 62px 0px;
+  top: 28%;
+  left: 5%;
 }
 
 .robot-eye-right {
+  border-radius: 100% 0px 0px 83px / 100% 0px 0px 62px;
+  top: 50px;
+  left: 56%;
 }
 
 .robot-ear-left {
