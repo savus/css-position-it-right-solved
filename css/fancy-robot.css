@@ -1,5 +1,6 @@
 .robot-container {
   margin: 20vh auto;
+  position: relative;
 }
 
 .robot-face-shape {
@@ -36,20 +37,37 @@
 
 .robot-eye-right {
   border-radius: 100% 0px 0px 83px / 100% 0px 0px 62px;
-  top: 50px;
+  top: 9%;
   left: 56%;
 }
 
+.robot-ear-left,
+.robot-ear-right {
+  --border-width: 180px;
+  width: 0px;
+  height: 0px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
 .robot-ear-left {
+  border-right: solid var(--border-width) rgba(116, 255, 244, 0.6);
+  border-top: solid calc(var(--border-width) / 2) transparent;
+  border-bottom: solid calc(var(--border-width) / 2) transparent;
+  right: 100%;
 }
 
 .robot-ear-right {
+  border-left: solid var(--border-width) rgba(116, 255, 244, 0.6);
+  border-top: solid calc(var(--border-width) / 2) transparent;
+  border-bottom: solid calc(var(--border-width) / 2) transparent;
 }
 
 .robot-nose {
 }
 
-.robot-teeth {
+.robot-mouth {
 }
 
 .robot-tooth {
