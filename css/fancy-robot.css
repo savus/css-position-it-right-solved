@@ -42,12 +42,14 @@
   border-radius: 0px 100% 83px 0px / 0px 100% 62px 0px;
   top: 28%;
   left: 5%;
+  animation: wink 5s ease-in-out infinite alternate;
 }
 
 .robot-eye-right {
   border-radius: 100% 0px 0px 83px / 100% 0px 0px 62px;
   top: 9%;
   left: 56%;
+  animation: moveAroundSquare 5s ease-in-out infinite alternate;
 }
 
 .robot-nose,
@@ -61,6 +63,12 @@
   position: relative;
   width: 100px;
   height: 90px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.robot-nose:hover {
+  transform: scale(1.5, 0.8) translate(-25%, 0%);
+  cursor: pointer;
 }
 
 .robot-nose:before,
@@ -119,50 +127,62 @@
 
 .robot-mouth .robot-tooth:nth-child(1) {
   left: 0px;
+  animation: fadeInOut 1s infinite alternate;
 }
 
 .robot-mouth .robot-tooth:nth-child(2) {
   left: 30px;
+  animation: fadeInOut 5s infinite alternate;
 }
 
 .robot-mouth .robot-tooth:nth-child(3) {
   left: 60px;
+  animation: fadeInOut 4s infinite alternate;
 }
 
 .robot-mouth .robot-tooth:nth-child(4) {
   left: 80px;
+  animation: fadeInOut 2s infinite alternate;
 }
 
 .robot-mouth .robot-tooth:nth-child(5) {
   left: 100px;
+  animation: fadeInOut 3s infinite alternate;
 }
 
 .robot-mouth .robot-tooth:nth-child(6) {
   left: 120px;
+  animation: fadeInOut 6s infinite alternate;
 }
 
 .robot-mouth .robot-tooth:nth-child(7) {
   left: 140px;
+  animation: fadeInOut 4s infinite alternate;
 }
 
 .robot-mouth .robot-tooth:nth-child(8) {
   left: 160px;
+  animation: fadeInOut 1s infinite alternate;
 }
 
 .robot-mouth .robot-tooth:nth-child(9) {
   left: 180px;
+  animation: fadeInOut 2s infinite alternate;
 }
 
 .robot-mouth .robot-tooth:nth-child(10) {
   left: 200px;
+  animation: fadeInOut 5s infinite alternate;
 }
 
 .robot-mouth .robot-tooth:nth-child(11) {
   left: 230px;
+  animation: fadeInOut 3s infinite alternate;
 }
 
 .robot-mouth .robot-tooth:nth-child(12) {
   left: 260px;
+  animation: fadeInOut 4s infinite alternate;
 }
 
 .robot-ear-left,
@@ -178,6 +198,9 @@
   border-top: solid calc(var(--border-width) / 2) transparent;
   border-bottom: solid calc(var(--border-width) / 2) transparent;
   right: 100%;
+  /* transform: rotate(270deg) translate(50%, 50%); */
+
+  animation: spin 5s infinite forwards;
 }
 
 .robot-ear-right {
@@ -233,43 +256,94 @@
 }
 
 .robot-hair-one {
-  background: #fceabb; /* fallback for old browsers */
-  background: -webkit-linear-gradient(
-    to right,
-    #f8b500,
-    #fceabb
-  ); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(
-    to right,
-    #f8b500,
-    #fceabb
-  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  animation: colorShift 3s infinite alternate;
 }
 
 .robot-hair-two {
-  background: #808080; /* fallback for old browsers */
-  background: -webkit-linear-gradient(
-    to left,
-    #3fada8,
-    #808080
-  ); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(
-    to left,
-    #3fada8,
-    #808080
-  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  animation: colorShift 2s infinite alternate;
 }
 
 .robot-hair-three {
-  background: #3a6186; /* fallback for old browsers */
-  background: -webkit-linear-gradient(
-    to right,
-    #89253e,
-    #3a6186
-  ); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(
-    to right,
-    #89253e,
-    #3a6186
-  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  animation: colorShift 1s infinite alternate;
+}
+
+@keyframes wink {
+  0% {
+    height: 19%;
+  }
+  50% {
+    height: 0%;
+  }
+  100% {
+    height: 19%;
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg) translate(0, -50%);
+  }
+  25% {
+    transform: rotate(90deg) translate(-50%, -50%);
+  }
+  50% {
+    transform: rotate(180deg) translate(-50%, 50%);
+  }
+  75% {
+    transform: rotate(270deg) translate(50%, 50%);
+  }
+  100% {
+    transform: rotate(360deg) translate(0, -50%);
+  }
+}
+
+@keyframes fadeInOut {
+  0%,
+  100% {
+    opacity: 1;
+    visibility: visible;
+  }
+  50% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+@keyframes moveAroundSquare {
+  0%,
+  100% {
+    top: 9%;
+    left: 56%;
+  }
+  10%,
+  25% {
+    top: 0;
+    left: 76%;
+  }
+  50% {
+    top: 50%;
+    left: 76%;
+  }
+  75% {
+    top: 50%;
+    left: 56%;
+  }
+}
+
+@keyframes colorShift {
+  0% {
+    background-color: #f8b500;
+  }
+  25% {
+    background-color: #fceabb;
+  }
+  50% {
+    background-color: #3fada8;
+  }
+  75% {
+    background-color: #808080;
+  }
+  100% {
+    background-color: #89253e;
+  }
 }
